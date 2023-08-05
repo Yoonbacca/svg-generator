@@ -1,0 +1,18 @@
+{
+  "name": "svg-generator",
+  "version": "1.0.0",
+  "description": "A utility to generate simple logos",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "svg-generator"
+  },
+  "author": "Yoonbacca",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
