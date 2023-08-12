@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const Logo = require('./lib/logo.js');
+const Logo = require('./lib/shapes.js');
 
 const questions = [
     {
@@ -9,20 +9,20 @@ const questions = [
         message: "Logo Text (up to 3 chars): "
     },
     {
-        type: 'input',
-        name: 'textColor',
-        message: "Logo Text Color (keyword or hexadecimal): "
-    },    
-    {
         type: 'list',
         name: 'shape',
         message: 'Logo Shape:',
         choices: ['Circle', 'Triangle', 'Square']
-    },    
+    },
+    {
+        type: 'input',
+        name: 'textColor',
+        message: `Logo Text Color (Keyword or Hex): `
+    },        
     {
         type: 'input',
         name: 'shapeColor',
-        message: "Logo Shape Color (keyword or hexadecimal): "
+        message: `Logo Shape Color (Keyword or Hex): `
     }, 
 ];
 
