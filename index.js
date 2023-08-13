@@ -26,6 +26,12 @@ const questions = [
     }, 
 ];
 
+function writeToFile(data) { 
+    fs.writeFile('./assets/NEWLOGO.svg', data, (err) =>
+    err ? console.error(err) : console.log('Success! Check the examples folder for your new logo!')
+    );
+}
+
 function init() {
     console.log("Welcome to the Logo Generator! Please follow the prompts below");
 
@@ -33,15 +39,22 @@ function init() {
         .prompt(questions)
         .then((answers) => {
             console.log("Thank you!");
-            const newLogo = new Logo(
-                answers.text,
-                answers.textColor,
-                answers.shape,
-                answers.shapeColor
-            );
-            console.log(newLogo);
-        });
+            if (answers.shape === "Circle") {
+                const newCircle = new Circle(answers.text, answers.textColor, answers.shapeColor);
+                const finalLogo = newCircle.render();
+                writeToFile(finalLogo);
+            } else if (answers.shape === "Triangle") {
+                const newTriangle = new Triangle(answers.text, answers.textColor, answers.shapeColor);
+                const finalLogo = newTriangle.render();
+                writeToFile(finalLogo);
+            } else if (answers.shape === "Square") {
+                const newSquare = new Square(answers.text, answers.textColor, answers.shapeColor);
+                const finalLogo = newSquare.render();
+                writeToFile(finalLogo);
+            }
 
+        })
+        .catch((error) => console.log(error));
 };
 
 init();
