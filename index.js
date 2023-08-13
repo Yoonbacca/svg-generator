@@ -1,6 +1,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const Logo = require('./lib/shapes.js');
+const Shapes = require('./lib/shapes.js');
+const Circle = Shapes.Circle;
+const Triangle = Shapes.Triangle; 
+const Square = Shapes.Square;
 
 const questions = [
     {
@@ -27,7 +30,7 @@ const questions = [
 ];
 
 function writeToFile(data) { 
-    fs.writeFile('./assets/NEWLOGO.svg', data, (err) =>
+    fs.writeFile('./examples/NEWLOGO.svg', data, (err) =>
     err ? console.error(err) : console.log('Success! Check the examples folder for your new logo!')
     );
 }
