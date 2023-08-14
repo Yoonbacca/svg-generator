@@ -42,17 +42,18 @@ function init() {
         .prompt(questions)
         .then((answers) => {
             console.log("Thank you!");
+            let finalLogo = '<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">';
             if (answers.shape === "Circle") {
                 const newCircle = new Circle(answers.text, answers.textColor, answers.shapeColor);
-                const finalLogo = newCircle.render();
+                finalLogo = newCircle.renderStart() + newCircle.render() + newCircle.renderEnd();
                 writeToFile(finalLogo);
             } else if (answers.shape === "Triangle") {
                 const newTriangle = new Triangle(answers.text, answers.textColor, answers.shapeColor);
-                const finalLogo = newTriangle.render();
+                finalLogo = newTriangle.renderStart() + newTriangle.render() + newTriangle.renderEnd();
                 writeToFile(finalLogo);
             } else if (answers.shape === "Square") {
                 const newSquare = new Square(answers.text, answers.textColor, answers.shapeColor);
-                const finalLogo = newSquare.render();
+                finalLogo = newSquare.renderStart() + newSquare.render() + newSquare.renderEnd();
                 writeToFile(finalLogo);
             }
 
