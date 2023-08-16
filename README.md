@@ -22,7 +22,7 @@ Methods used here were learned from NW Coding Bootcamp.
 Clone the repo into your local machine, then run 'node index.js'. Make sure that node is already installed before running the command in your CLI.
 
 ## Usage
-This project can be used by anyone looking to streamline their README creation process.
+This project can be used by anyone looking to streamline their logo creation process.
 
 ## Credits
 ### Github
